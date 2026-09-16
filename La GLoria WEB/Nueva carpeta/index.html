@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Gloria TL — Torneo Indiana F8</title>
+
+<!-- FAVICON & OPEN GRAPH (VISTA PREVIA EN WHATSAPP / INSTAGRAM) -->
+<link rel="icon" type="image/jpeg" href="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg">
+<meta property="og:title" content="La Gloria TL — Sitio Oficial">
+<meta property="og:description" content="Equipo de Fútbol 8 de Trenque Lauquen en Torneo Indiana (CABA). Fixture, tabla, estadísticas y camisetas oficiales.">
+<meta property="og:image" content="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg">
+<meta property="og:url" content="https://lagloriatl.netlify.app/">
+<meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -54,24 +63,32 @@
   .brand-name { color: var(--crema); font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 800; }
   .brand-name span { color: var(--dorado); font-style: italic; }
 
-  nav.links { display: flex; gap: 20px; }
+  nav.links { display: flex; gap: 20px; align-items: center; }
   nav.links a {
     color: var(--crema); font-size: 0.9rem; font-weight: 500; opacity: 0.85; transition: 0.2s;
   }
   nav.links a:hover { opacity: 1; color: var(--dorado-claro); }
+  .nav-ig-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(209, 183, 134, 0.2); border: 1px solid var(--dorado);
+    padding: 5px 12px; border-radius: 4px; font-size: 0.82rem; font-weight: 600;
+    color: var(--dorado-claro) !important; opacity: 1 !important;
+  }
+  .nav-ig-btn:hover { background: var(--dorado); color: var(--azul-profundo) !important; }
+
   .menu-btn {
     display: none; background: none; border: none; color: var(--crema); font-size: 1.6rem; cursor: pointer;
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 920px) {
     nav.links {
       position: absolute; top: 70px; left: 0; right: 0;
-      background: var(--azul-noche); flex-direction: column;
+      background: var(--azul-noche); flex-direction: column; align-items: flex-start;
       max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
       border-bottom: 2px solid var(--dorado);
     }
     nav.links.open { max-height: 520px; }
-    nav.links a { padding: 14px 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+    nav.links a { padding: 14px 20px; border-top: 1px solid rgba(255,255,255,0.08); width: 100%; }
     .menu-btn { display: block; }
   }
 
@@ -153,18 +170,47 @@
     margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.08);
     font-size: 0.85rem; text-align: center; color: rgba(247, 245, 239, 0.85);
   }
-  .btn-maps {
+  .match-actions {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 12px;
+  }
+  .btn-maps, .btn-cal {
     display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-    margin-top: 10px; padding: 8px 16px;
-    background: var(--dorado); color: var(--azul-profundo);
-    font-size: 0.82rem; font-weight: 700; border-radius: 4px;
+    padding: 8px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 4px;
     transition: 0.2s;
   }
+  .btn-maps { background: var(--dorado); color: var(--azul-profundo); }
   .btn-maps:hover { background: var(--dorado-claro); transform: translateY(-1px); }
+  .btn-cal { background: transparent; border: 1px solid var(--dorado); color: var(--dorado-claro); }
+  .btn-cal:hover { background: rgba(209, 183, 134, 0.15); transform: translateY(-1px); }
+
+  /* CARA A CARA (HEAD TO HEAD) */
+  .h2h-card {
+    background: var(--crema-card); border: 1px solid var(--borde);
+    border-radius: 8px; padding: 24px; margin-bottom: 40px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  }
+  .h2h-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr 1fr; align-items: center; text-align: center; gap: 16px;
+  }
+  .h2h-team-name { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; color: var(--azul-noche); }
+  .h2h-rows { display: flex; flex-direction: column; gap: 10px; }
+  .h2h-row {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
+    font-size: 0.9rem; padding: 6px 0; border-bottom: 1px dashed rgba(0,0,0,0.08);
+  }
+  .h2h-stat-lbl { font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: #777; }
+  .h2h-val { font-weight: 800; font-size: 1.05rem; }
+  .h2h-val.gloria { color: var(--azul-noche); }
+  .h2h-notice {
+    text-align: center; margin-top: 14px; font-size: 0.85rem; font-weight: 600;
+    color: var(--azul-noche); background: rgba(209, 183, 134, 0.22);
+    padding: 8px 12px; border-radius: 4px;
+  }
 
   @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
     .hero-welcome-box { justify-content: center; }
+    .h2h-grid { grid-template-columns: 1fr; }
   }
 
   /* SECCIONES COMUNES */
@@ -226,6 +272,50 @@
     border-radius: 5px; margin-top: auto; transition: 0.2s;
   }
   .btn-order:hover { background: #1EBE5D; transform: translateY(-1px); }
+
+  /* ESTADÍSTICAS INDIVIDUALES */
+  .stats-layout {
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start;
+  }
+  .scorers-box {
+    background: var(--crema-card); border: 1px solid var(--borde);
+    border-radius: 8px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+  }
+  .scorers-table {
+    width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem;
+  }
+  .scorers-table th, .scorers-table td { padding: 12px 16px; }
+  .scorers-table th {
+    background: var(--azul-noche); color: var(--dorado-claro);
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+  }
+  .scorers-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .scorers-table tr:last-child { border-bottom: none; }
+  .scorers-table td.goals-col {
+    font-weight: 800; color: var(--azul-noche); font-size: 1.1rem; text-align: center;
+  }
+
+  .mvp-card {
+    background: var(--azul-noche); border: 2px solid var(--dorado);
+    border-radius: 8px; padding: 24px; color: var(--crema);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25); text-align: center;
+  }
+  .mvp-badge-top {
+    display: inline-block; background: var(--dorado); color: var(--azul-profundo);
+    font-size: 0.75rem; font-weight: 800; letter-spacing: 1px;
+    text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
+  }
+  .mvp-name { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--dorado-claro); }
+  .mvp-role { font-size: 0.88rem; opacity: 0.8; margin-top: 2px; }
+  .mvp-count {
+    font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 900;
+    color: var(--dorado); line-height: 1; margin: 16px 0 8px;
+  }
+  .mvp-desc { font-size: 0.86rem; opacity: 0.85; max-width: 280px; margin: 0 auto; }
+
+  @media (max-width: 768px) {
+    .stats-layout { grid-template-columns: 1fr; }
+  }
 
   /* TÁCTICA & CANCHA */
   .tactics-wrapper {
@@ -365,10 +455,14 @@
     <nav class="links" id="navLinks">
       <a href="#proximo">Próximo Partido</a>
       <a href="#camisetas">Camisetas</a>
+      <a href="#estadisticas">Goleadores & MVP</a>
       <a href="#tactica">Formación</a>
       <a href="#posiciones">Tabla Super A TT</a>
       <a href="#historial">Resultados</a>
       <a href="#galeria">Fotos</a>
+      <a href="https://www.instagram.com/lagloriatl/" target="_blank" rel="noopener noreferrer" class="nav-ig-btn">
+        📸 @lagloriatl
+      </a>
     </nav>
     <button class="menu-btn" id="menuBtn">☰</button>
   </div>
@@ -422,10 +516,63 @@
 
         <div class="match-venue">
           <div>📍 <strong>Circuito KDT</strong> — Jerónimo Salguero 3450, Palermo, CABA</div>
-          <a href="https://maps.google.com/?q=Circuito+KDT+Jeronimo+Salguero+3450" target="_blank" rel="noopener noreferrer" class="btn-maps">
-            🗺️ Abrir en Google Maps
-          </a>
+          <div class="match-actions">
+            <a href="https://maps.google.com/?q=Circuito+KDT+Jeronimo+Salguero+3450" target="_blank" rel="noopener noreferrer" class="btn-maps">
+              🗺️ Abrir Maps
+            </a>
+            <!-- AGREGAR A GOOGLE CALENDAR -->
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=La+Gloria+vs+CA+Decadentes+(F8)&dates=20260919T190000Z/20260919T203000Z&details=Torneo+Indiana+Super+A+TT+-+Cancha+KDT&location=Circuito+KDT,+Jeronimo+Salguero+3450,+Palermo,+CABA" target="_blank" rel="noopener noreferrer" class="btn-cal">
+              📅 Agendar
+            </a>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIA: CARA A CARA (HEAD TO HEAD) -->
+<section style="padding: 40px 0 0;">
+  <div class="wrap">
+    <div class="h2h-card">
+      <div class="section-title" style="margin-bottom: 20px; border-bottom: 1px solid var(--borde);">
+        <h3 class="serif" style="font-size: 1.4rem;">Previa de la Fecha: Cara a Cara</h3>
+        <span>Super A TT</span>
+      </div>
+      <div class="h2h-grid">
+        <div>
+          <div class="h2h-team-name">CA Decadentes</div>
+          <div style="font-size:0.85rem; color:#666;">5° en la tabla</div>
+        </div>
+        <div class="h2h-rows">
+          <div class="h2h-row">
+            <span class="h2h-val">9</span>
+            <span class="h2h-stat-lbl">Puntos</span>
+            <span class="h2h-val gloria">7</span>
+          </div>
+          <div class="h2h-row">
+            <span class="h2h-val">6</span>
+            <span class="h2h-stat-lbl">Partidos Jugados</span>
+            <span class="h2h-val gloria">5</span>
+          </div>
+          <div class="h2h-row">
+            <span class="h2h-val">3 / 0 / 3</span>
+            <span class="h2h-stat-lbl">G / E / P</span>
+            <span class="h2h-val gloria">2 / 1 / 2</span>
+          </div>
+          <div class="h2h-row">
+            <span class="h2h-val">0</span>
+            <span class="h2h-stat-lbl">Dif. Gol</span>
+            <span class="h2h-val gloria">-1</span>
+          </div>
+        </div>
+        <div>
+          <div class="h2h-team-name" style="color:var(--azul-noche);">La Gloria TL</div>
+          <div style="font-size:0.85rem; color:#666;">8° en la tabla (1 partido menos)</div>
+        </div>
+      </div>
+      <div class="h2h-notice">
+        🔥 Clave de la fecha: Si La Gloria gana, llega a 10 puntos, supera a CA Decadentes y trepa al 5° puesto con un partido pendiente.
       </div>
     </div>
   </div>
@@ -460,7 +607,7 @@
             <span class="size-pill">XXL</span>
           </div>
           <div class="jersey-price">Consultar valor <span>/ Encargo personalizado</span></div>
-          <a href="https://wa.me/5492392503561?text=Hola!%20Quiero%20encargar%20la%20Camiseta%20Titular%20de%20La%20Gloria%20TL" target="_blank" rel="noopener noreferrer" class="btn-order">
+          <a href="https://wa.me/?text=Hola!%20Quiero%20encargar%20la%20Camiseta%20Titular%20de%20La%20Gloria%20TL" target="_blank" rel="noopener noreferrer" class="btn-order">
             Pedir por WhatsApp 💬
           </a>
         </div>
@@ -486,7 +633,7 @@
             <span class="size-pill">XXL</span>
           </div>
           <div class="jersey-price">Consultar valor <span>/ Edición Limitada</span></div>
-          <a href="https://wa.me/5492392503561?text=Hola!%20Quiero%20encargar%20la%20Camiseta%20de%20Arquero%20de%20La%20Gloria%20TL" target="_blank" rel="noopener noreferrer" class="btn-order">
+          <a href="https://wa.me/?text=Hola!%20Quiero%20encargar%20la%20Camiseta%20de%20Arquero%20de%20La%20Gloria%20TL" target="_blank" rel="noopener noreferrer" class="btn-order">
             Pedir por WhatsApp 💬
           </a>
         </div>
@@ -495,8 +642,82 @@
   </div>
 </section>
 
+<!-- ESTADÍSTICAS DEL PLANTEL: GOLEADORES & FIGURA -->
+<section id="estadisticas">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Estadísticas Oficiales</h2>
+      <span>Torneo Indiana · Rendimiento del Plantel</span>
+    </div>
+
+    <div class="stats-layout">
+      <!-- Tabla de Goleadores -->
+      <div class="scorers-box">
+        <table class="scorers-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Jugador</th>
+              <th>Dorsal / Posición</th>
+              <th style="text-align:center;">Goles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1°</strong></td>
+              <td><strong>Simón Martino</strong></td>
+              <td style="color:#666;">#10 · Delantero</td>
+              <td class="goals-col">2</td>
+            </tr>
+            <tr>
+              <td><strong>1°</strong></td>
+              <td><strong>Mendoza</strong></td>
+              <td style="color:#666;">#16 · Delantero</td>
+              <td class="goals-col">2</td>
+            </tr>
+            <tr>
+              <td><strong>1°</strong></td>
+              <td><strong>Fernandez</strong></td>
+              <td style="color:#666;">#17 · Medio Central</td>
+              <td class="goals-col">2</td>
+            </tr>
+            <tr>
+              <td>4°</td>
+              <td>Mansilla</td>
+              <td style="color:#666;">#8 · Medio por Derecha</td>
+              <td class="goals-col">1</td>
+            </tr>
+            <tr>
+              <td>4°</td>
+              <td>Savy</td>
+              <td style="color:#666;">#4 · Polifuncional</td>
+              <td class="goals-col">1</td>
+            </tr>
+            <tr>
+              <td>4°</td>
+              <td>Bossa</td>
+              <td style="color:#666;">#22 · Defensor Izquierdo</td>
+              <td class="goals-col">1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tarjeta MVP / Figura del Torneo -->
+      <div class="mvp-card">
+        <span class="mvp-badge-top">⭐ Figura del Equipo</span>
+        <div class="mvp-name">Conrado</div>
+        <div class="mvp-role">#1 · Dueño del Arco de La Gloria</div>
+        <div class="mvp-count">2</div>
+        <div style="font-weight:700; color:var(--dorado-claro); font-size:1rem; margin-bottom:8px;">Premios MVP de la Fecha</div>
+        <p class="mvp-desc">Seguridad, reflejos y tapadas decisivas bajo los tres palos para bancar el arco trenquelauquense.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TÁCTICA & PLANTEL -->
-<section id="tactica">
+<section id="tactica" style="background:#ECE9DF;">
   <div class="wrap">
     <div class="section-title">
       <h2>Formación Táctica</h2>
@@ -582,7 +803,7 @@
 </section>
 
 <!-- TABLA DE POSICIONES -->
-<section id="posiciones" style="background:#ECE9DF;">
+<section id="posiciones">
   <div class="wrap">
     <div class="section-title">
       <h2>Tabla de Posiciones</h2>
@@ -623,7 +844,7 @@
 </section>
 
 <!-- ÚLTIMOS RESULTADOS -->
-<section id="historial">
+<section id="historial" style="background:#ECE9DF;">
   <div class="wrap">
     <div class="section-title">
       <h2>Últimos Partidos</h2>
@@ -656,7 +877,7 @@
 </section>
 
 <!-- GALERÍA DE FOTOS REALES -->
-<section id="galeria" style="background:#ECE9DF;">
+<section id="galeria">
   <div class="wrap">
     <div class="section-title">
       <h2>Galería del Equipo</h2>
@@ -701,7 +922,11 @@
         <img src="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg" class="brand-logo-img" alt="La Gloria TL" loading="lazy" decoding="async">
         <div class="brand-name">LA <span>GLORIA</span> TL</div>
       </div>
-      <p style="font-size:0.9rem; opacity:0.8;">Fútbol 8 · Torneos Indiana · Buenos Aires</p>
+      <div style="display:flex; gap:16px; align-items:center;">
+        <a href="https://www.instagram.com/lagloriatl/" target="_blank" rel="noopener noreferrer" style="color:var(--dorado-claro); font-weight:600; font-size:0.95rem;">
+          📸 Seguinos en @lagloriatl
+        </a>
+      </div>
     </div>
     <div class="footer-copy">
       © 2026 La Gloria TL — DT: Facundo Samame · AC: Agustín Medina · Jefe de Barra: Juan Bailon
@@ -731,7 +956,7 @@
     btn.classList.add('active');
   }
 
-  // CUENTA REGRESIVA DINÁMICA
+  // CUENTA REGRESIVA DINÁMICA: 19 de Septiembre 2026, 16:00 hs (Hora Argentina)
   const matchDate = new Date("2026-09-19T16:00:00-03:00").getTime();
 
   function updateCountdown() {
