@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Gloria TL — Torneo Indiana F8</title>
 
-<!-- FAVICON & OPEN GRAPH (PREVISUALIZACIÓN EN REDES) -->
+<!-- FAVICON & OPEN GRAPH -->
 <link rel="icon" type="image/jpeg" href="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg">
 <meta property="og:title" content="La Gloria TL — Sitio Oficial">
 <meta property="og:description" content="Equipo de Fútbol 8 de Trenque Lauquen en Torneo Indiana (CABA). Fixture, tabla, estadísticas, camisetas y carnet de socio.">
 <meta property="og:image" content="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg">
 <meta property="og:url" content="https://lagloriatl.netlify.app/">
 <meta property="og:type" content="website">
+
+<!-- HTML2CANVAS PARA DESCARGAR EL CARNET -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +66,7 @@
   .brand-name { color: var(--crema); font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 800; }
   .brand-name span { color: var(--dorado); font-style: italic; }
 
-  nav.links { display: flex; gap: 16px; align-items: center; }
+  nav.links { display: flex; gap: 14px; align-items: center; }
   nav.links a {
     color: var(--crema); font-size: 0.88rem; font-weight: 500; opacity: 0.85; transition: 0.2s;
   }
@@ -166,7 +169,6 @@
   .cd-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--dorado); line-height: 1; }
   .cd-label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.7; margin-top: 4px; }
 
-  /* WIDGET DEL CLIMA */
   .match-weather {
     display: flex; align-items: center; justify-content: space-between;
     background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(209, 183, 134, 0.2);
@@ -190,6 +192,16 @@
   .btn-maps:hover { background: var(--dorado-claro); transform: translateY(-1px); }
   .btn-cal { background: transparent; border: 1px solid var(--dorado); color: var(--dorado-claro); }
   .btn-cal:hover { background: rgba(209, 183, 134, 0.15); transform: translateY(-1px); }
+
+  /* SPOTIFY EMBED */
+  .spotify-box {
+    margin-top: 24px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(209, 183, 134, 0.25);
+    border-radius: 8px; padding: 14px;
+  }
+  .spotify-title {
+    display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700;
+    color: var(--dorado-claro); margin-bottom: 10px; text-transform: uppercase;
+  }
 
   /* PREVIA CARA A CARA */
   .h2h-card {
@@ -441,6 +453,14 @@
   .carnet-id { font-family: monospace; font-size: 0.85rem; color: var(--dorado); font-weight: 700; }
   .carnet-sign { font-size: 0.72rem; text-align: right; opacity: 0.75; }
 
+  .btn-download-carnet {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--dorado); color: var(--azul-profundo); font-weight: 800;
+    padding: 10px 18px; border-radius: 6px; border: none; cursor: pointer;
+    font-size: 0.88rem; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  .btn-download-carnet:hover { background: var(--dorado-claro); transform: translateY(-1px); }
+
   .members-list {
     margin-top: 24px; background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; padding: 20px;
@@ -504,7 +524,7 @@
   .photo-card {
     background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-    display: flex; flex-direction: column;
+    display: flex; flex-direction: column; cursor: pointer;
   }
   .photo-frame {
     width: 100%; aspect-ratio: 4 / 3; background: #162233;
@@ -514,8 +534,24 @@
     width: 100%; height: 100%; object-fit: cover;
     transition: transform 0.3s ease;
   }
-  .photo-frame img:hover { transform: scale(1.03); }
+  .photo-frame img:hover { transform: scale(1.04); }
   .photo-caption { padding: 14px 16px; font-size: 0.88rem; color: #333; flex-grow: 1; }
+
+  /* LIGHTBOX PANTALLA COMPLETA */
+  .lightbox-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000;
+    display: none; align-items: center; justify-content: center; padding: 20px;
+  }
+  .lightbox-overlay.active { display: flex; }
+  .lightbox-img-box { max-width: 90vw; max-height: 85vh; position: relative; }
+  .lightbox-img-box img { max-width: 100%; max-height: 85vh; border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,0.7); }
+  .lightbox-close {
+    position: absolute; top: -38px; right: 0; background: none; border: none;
+    font-size: 2rem; color: #FFF; cursor: pointer;
+  }
+  .lightbox-caption {
+    color: var(--crema); text-align: center; margin-top: 12px; font-size: 0.95rem; font-weight: 500;
+  }
 
   /* MODAL DE JUGADOR */
   .modal-overlay {
@@ -572,9 +608,9 @@
       <a href="#camisetas">Camisetas</a>
       <a href="#estadisticas">Goleadores</a>
       <a href="#tactica">Plantel</a>
-      <a href="#historia">Historia & Palmarés</a>
+      <a href="#historia">Historia</a>
       <a href="#barra">Socios</a>
-      <a href="#posiciones">Tabla Super A TT</a>
+      <a href="#posiciones">Tabla</a>
       <a href="#historial">Resultados</a>
       <a href="#galeria">Fotos</a>
       <a href="https://www.instagram.com/lagloriatl/" target="_blank" rel="noopener noreferrer" class="nav-ig-btn">
@@ -585,14 +621,14 @@
   </div>
 </header>
 
-<!-- HERO CON ESCUDO Y PRESENTACIÓN -->
+<!-- HERO CON ESCUDO, PRESENTACIÓN Y SPOTIFY -->
 <section class="hero" id="proximo">
   <div class="wrap">
     <div class="hero-grid">
       <div>
         <div class="hero-tag">Torneo Indiana · F8 Hombres Super A TT</div>
         <h1>La <span style="color:var(--dorado); font-style:italic;">Gloria</span></h1>
-        <p class="desc">Equipo de fútbol 8 con el corazón en Trenque Lauquen compitiendo en Capital. Fixture, indumentaria oficial, esquema táctico y comunidad de socios.</p>
+        <p class="desc">Equipo de fútbol 8 con el corazón en Trenque Lauquen compitiendo en Capital. Fixture, indumentaria oficial, música de previa y comunidad de socios.</p>
         
         <div class="hero-welcome-box">
           <img src="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg" alt="Escudo Oficial La Gloria" class="hero-escudo-main" decoding="async">
@@ -601,6 +637,12 @@
             <div style="font-family:'Fraunces', serif; font-size:1.15rem; color:var(--dorado-claro);">Pueblo y Garra</div>
             <div style="font-size:0.82rem; opacity:0.8;">Sábados de fútbol en CABA</div>
           </div>
+        </div>
+
+        <!-- PLAYLIST SPOTIFY DE LA PREVIA -->
+        <div class="spotify-box">
+          <div class="spotify-title">🎵 Playlist Oficial de la Previa</div>
+          <iframe style="border-radius:8px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
 
@@ -932,7 +974,6 @@
       <span>La Mística de La Gloria TL</span>
     </div>
 
-    <!-- CRÓNICA HISTÓRICA -->
     <div class="history-narrative">
       <h3 class="serif" style="font-size: 1.55rem; color: var(--azul-noche); margin-bottom: 16px;">
         Forjados en el barro, la amistad y el calor
@@ -946,7 +987,7 @@
 
         <p>
           <strong style="color: var(--azul-noche); font-size: 1.05rem;">2024: El Bautismo en Indiana y la Estrella Eterna.</strong> 
-          El salto a Torneos Indiana marcó un antes y un después. Tras un Apertura que demandó derecho de piso, el Clausura 2024 fue una obra de arte: <strong>campeones invictos a lo largo de 14 batallas</strong>. Arrancando con un 16-1 histórico ante Fuera de la Caja, sorteando semifinales de fuego y coronando en una final infartante frente a Pichincha: empate 2-2 en el tiempo regular y gloria eterna en los penales por 5-4. El festejo coronó con un asado legendario en Tamarisco, grabado a fuego en la historia grande del club.
+          El salto a Torneos Indiana marcó un antes y un después. Tras un Apertura que demandó derecho de piso, el Clausura 2024 fue una obra de arte: <strong>campeones invictos a lo largo de 14 batallas</strong>[cite: 3]. Arrancando con un 16-1 histórico ante Fuera de la Caja, sorteando semifinales de fuego y coronando en una final infartante frente a Pichincha: empate 2-2 en el tiempo regular y gloria eterna en los penales por 5-4. El festejo coronó con un asado legendario en Tamarisco, grabado a fuego en la historia grande del club.
         </p>
 
         <p>
@@ -986,7 +1027,7 @@
       </div>
     </div>
 
-    <!-- CAMPAÑA DEL CAMPEÓN CLAUSURA 2024 (14 PARTIDOS) -->
+    <!-- CAMPAÑA DEL CAMPEÓN CLAUSURA 2024 -->
     <div style="background: var(--crema-card); border: 1px solid var(--borde); border-radius: 8px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--azul-noche); padding-bottom: 12px; margin-bottom: 20px;">
         <h3 class="serif" style="font-size: 1.35rem; color: var(--azul-noche); margin: 0;">
@@ -1023,7 +1064,7 @@
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">5 — 0</span>
         </div>
 
-        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 6</span>Puercos FC vs <strong>La Gloria</strong></div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 2</span>
         </div>
@@ -1048,7 +1089,7 @@
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">5 — 0</span>
         </div>
 
-        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 11</span>Pichincha vs <strong>La Gloria</strong></div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 2</span>
         </div>
@@ -1058,7 +1099,7 @@
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">3 — 0</span>
         </div>
 
-        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:var(--azul-noche); font-size:0.75rem; font-weight:800; display:block;">SEMIFINAL</span><strong>La Gloria</strong> vs Vartan FC</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 1</span>
         </div>
@@ -1132,7 +1173,10 @@
             </div>
           </div>
         </div>
-        <span style="font-size:0.8rem; color:#666;">✨ Hacé una captura de pantalla a tu carnet y compartilo en tus historias.</span>
+
+        <button class="btn-download-carnet" onclick="descargarCarnet()">
+          📸 Descargar Carnet para Historias
+        </button>
       </div>
     </div>
 
@@ -1224,12 +1268,12 @@
   </div>
 </section>
 
-<!-- GALERÍA DE FOTOS CON FILTRO POR FECHAS -->
+<!-- GALERÍA DE FOTOS CON LIGHTBOX Y FILTRO -->
 <section id="galeria">
   <div class="wrap">
     <div class="section-title">
       <h2>Galería del Equipo</h2>
-      <span>Momentos Inmortalizados</span>
+      <span>Tocá cualquier foto para ver en pantalla completa</span>
     </div>
 
     <div class="filter-pills">
@@ -1239,7 +1283,7 @@
     </div>
 
     <div class="photos-grid">
-      <div class="photo-card" data-date="azopardo">
+      <div class="photo-card" data-date="azopardo" onclick="abrirLightbox('https://i.ibb.co/gbrbT3HQ/55529904092-730743aa04-o.jpg', 'Mansilla encarando por la derecha en Azopardo')">
         <div class="photo-frame">
           <img src="https://i.ibb.co/gbrbT3HQ/55529904092-730743aa04-o.jpg" alt="Mansilla por la banda" loading="lazy" decoding="async">
         </div>
@@ -1248,7 +1292,7 @@
         </div>
       </div>
 
-      <div class="photo-card" data-date="azopardo">
+      <div class="photo-card" data-date="azopardo" onclick="abrirLightbox('https://i.ibb.co/Kxm453SK/55530926936-ed838b49df-o.jpg', 'Presión alta y concentración en cada pelota dividida')">
         <div class="photo-frame">
           <img src="https://i.ibb.co/Kxm453SK/55530926936-ed838b49df-o.jpg" alt="Presión en la cancha" loading="lazy" decoding="async">
         </div>
@@ -1257,7 +1301,7 @@
         </div>
       </div>
 
-      <div class="photo-card" data-date="azopardo">
+      <div class="photo-card" data-date="azopardo" onclick="abrirLightbox('https://i.ibb.co/DP84qWpY/55530926876-bb5f10092f-o.jpg', 'Manejo de pelota y distribución en el mediocampo')">
         <div class="photo-frame">
           <img src="https://i.ibb.co/DP84qWpY/55530926876-bb5f10092f-o.jpg" alt="Manejo en el mediocampo" loading="lazy" decoding="async">
         </div>
@@ -1268,6 +1312,15 @@
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX MODAL PANTALLA COMPLETA -->
+<div class="lightbox-overlay" id="lightboxModal" onclick="cerrarLightbox(event)">
+  <div class="lightbox-img-box" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="cerrarLightboxDirecto()">✕</button>
+    <img id="lightboxImg" src="" alt="Foto en grande">
+    <div class="lightbox-caption" id="lightboxCap"></div>
+  </div>
+</div>
 
 <!-- MODAL FLOTANTE DE FICHA DE JUGADOR -->
 <div class="modal-overlay" id="playerModal" onclick="cerrarFicha(event)">
@@ -1333,7 +1386,7 @@
     btn.classList.add('active');
   }
 
-  // CUENTA REGRESIVA DINÁMICA: 19 de Septiembre 2026, 16:00 hs (Hora Argentina)
+  // CUENTA REGRESIVA DINÁMICA: Sábado 19/09/2026 a las 16:00 hs
   const matchDate = new Date("2026-09-19T16:00:00-03:00").getTime();
 
   function updateCountdown() {
@@ -1374,6 +1427,23 @@
     });
   }
 
+  // LIGHTBOX (PANTALLA COMPLETA PARA FOTOS)
+  function abrirLightbox(url, caption) {
+    document.getElementById('lightboxImg').src = url;
+    document.getElementById('lightboxCap').innerText = caption;
+    document.getElementById('lightboxModal').classList.add('active');
+  }
+
+  function cerrarLightbox(event) {
+    if (event.target.id === 'lightboxModal') {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+  }
+
+  function cerrarLightboxDirecto() {
+    document.getElementById('lightboxModal').classList.remove('active');
+  }
+
   // MODAL DE FICHAS DE JUGADORES
   function abrirFicha(nombre, dorsal, posicion, rol, stat, desc) {
     document.getElementById('mShirt').innerText = dorsal;
@@ -1400,8 +1470,29 @@
     document.getElementById('playerModal').classList.remove('active');
   }
 
-  // GENERADOR DE CARNET DE SOCIO DE LA BARRA
-  let socioIdCounter = 43;
+  // CARNET DE SOCIO CON PERSISTENCIA
+  const SOCIO_INICIAL = 43;
+
+  function cargarSociosGuardados() {
+    const guardados = JSON.parse(localStorage.getItem('socios_la_gloria') || '[]');
+    const contenedor = document.getElementById('membersList');
+    
+    const miCarnet = JSON.parse(localStorage.getItem('mi_carnet_gloria') || 'null');
+    if (miCarnet) {
+      document.getElementById('cardName').innerText = miCarnet.nombre;
+      document.getElementById('cardRole').innerText = miCarnet.rol;
+      document.getElementById('cardId').innerText = miCarnet.id;
+      document.getElementById('avatarChar').innerText = miCarnet.nombre.charAt(0).toUpperCase();
+    }
+
+    guardados.forEach(s => {
+      const tag = document.createElement('span');
+      tag.className = 'member-tag';
+      tag.innerText = `${s.nombre} (${s.id})`;
+      contenedor.appendChild(tag);
+    });
+  }
+
   function generarCarnet() {
     const inputNombre = document.getElementById('socioNombre').value.trim();
     const selectRol = document.getElementById('socioRol').value;
@@ -1411,21 +1502,47 @@
       return;
     }
 
+    const guardados = JSON.parse(localStorage.getItem('socios_la_gloria') || '[]');
+    const nuevoNumero = SOCIO_INICIAL + guardados.length;
+    const socioIdTexto = 'SOCIO #' + String(nuevoNumero).padStart(3, '0');
+
     document.getElementById('cardName').innerText = inputNombre;
     document.getElementById('cardRole').innerText = selectRol;
-    document.getElementById('cardId').innerText = 'SOCIO #' + String(socioIdCounter).padStart(3, '0');
+    document.getElementById('cardId').innerText = socioIdTexto;
     document.getElementById('avatarChar').innerText = inputNombre.charAt(0).toUpperCase();
 
-    // Agregar al padrón visual
+    const nuevoSocio = { nombre: inputNombre, rol: selectRol, id: '#' + String(nuevoNumero).padStart(3, '0') };
+    guardados.push(nuevoSocio);
+    localStorage.setItem('socios_la_gloria', JSON.stringify(guardados));
+    localStorage.setItem('mi_carnet_gloria', JSON.stringify({ nombre: inputNombre, rol: selectRol, id: socioIdTexto }));
+
     const tag = document.createElement('span');
     tag.className = 'member-tag';
-    tag.innerText = `${inputNombre} (#${socioIdCounter})`;
+    tag.innerText = `${inputNombre} (${nuevoSocio.id})`;
     document.getElementById('membersList').appendChild(tag);
 
-    socioIdCounter++;
     document.getElementById('socioNombre').value = '';
-    alert('¡Carnet oficial emitido con éxito! Hacé una captura para guardarlo.');
+    alert('¡Carnet oficial emitido! Ya podés tocar "Descargar Carnet" para subirlo a tus historias.');
   }
+
+  // DESCARGAR CARNET COMO IMAGEN PNG
+  function descargarCarnet() {
+    const carnetElement = document.getElementById('carnetBox');
+    
+    html2canvas(carnetElement, {
+      scale: 3, // Alta definición
+      useCORS: true,
+      backgroundColor: '#111A27'
+    }).then(canvas => {
+      const enlace = document.createElement('a');
+      const nombreSocio = document.getElementById('cardName').innerText.replace(/\s+/g, '_');
+      enlace.download = `Carnet_LaGloria_${nombreSocio}.png`;
+      enlace.href = canvas.toDataURL('image/png');
+      enlace.click();
+    });
+  }
+
+  cargarSociosGuardados();
 </script>
 
 </body>
