@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://lagloriatl.netlify.app/">
 <meta property="og:type" content="website">
 
-<!-- HTML2CANVAS PARA DESCARGAR EL CARNET -->
+<!-- LIBRERIA HTML2CANVAS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,7 +128,7 @@
     border: 2px solid var(--dorado); box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   }
 
-  /* PRÓXIMO MATCH */
+  /* NEXT MATCH */
   .next-match-card {
     background: var(--azul-noche);
     border: 2px solid var(--dorado);
@@ -193,7 +193,6 @@
   .btn-cal { background: transparent; border: 1px solid var(--dorado); color: var(--dorado-claro); }
   .btn-cal:hover { background: rgba(209, 183, 134, 0.15); transform: translateY(-1px); }
 
-  /* SPOTIFY EMBED */
   .spotify-box {
     margin-top: 24px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(209, 183, 134, 0.25);
     border-radius: 8px; padding: 14px;
@@ -203,7 +202,7 @@
     color: var(--dorado-claro); margin-bottom: 10px; text-transform: uppercase;
   }
 
-  /* PREVIA CARA A CARA */
+  /* PREVIA H2H */
   .h2h-card {
     background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; padding: 24px; margin-bottom: 40px;
@@ -233,7 +232,6 @@
     .h2h-grid { grid-template-columns: 1fr; }
   }
 
-  /* SECCIONES COMUNES */
   section { padding: 60px 0; }
   .section-title {
     display: flex; justify-content: space-between; align-items: baseline;
@@ -245,7 +243,7 @@
     font-size: 0.85rem; font-weight: 700; color: var(--dorado); text-transform: uppercase; letter-spacing: 1px;
   }
 
-  /* TIENDA DE CAMISETAS */
+  /* SHOP */
   .shop-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;
   }
@@ -289,7 +287,7 @@
   }
   .btn-order:hover { background: #1EBE5D; transform: translateY(-1px); }
 
-  /* ESTADÍSTICAS */
+  /* ESTADISTICAS */
   .stats-layout {
     display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start;
   }
@@ -326,7 +324,7 @@
   }
   .mvp-desc { font-size: 0.86rem; opacity: 0.85; max-width: 280px; margin: 0 auto; }
 
-  /* TÁCTICA & CANCHA */
+  /* TACTICA */
   .tactics-wrapper {
     display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start;
   }
@@ -383,7 +381,7 @@
   .staff-item { font-size: 0.88rem; margin-bottom: 6px; display: flex; justify-content: space-between; }
   .staff-role { font-weight: 600; color: var(--azul-noche); }
 
-  /* HISTORIA & PALMARÉS */
+  /* HISTORIA */
   .history-narrative {
     background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; padding: 30px; margin-bottom: 30px; line-height: 1.7;
@@ -400,7 +398,7 @@
   .trophy-title { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700; color: var(--azul-noche); }
   .trophy-sub { font-size: 0.85rem; color: #666; }
 
-  /* ASOCIATE A LA BARRA & CARNET DIGITAL */
+  /* BARRA Y CARNET */
   .barra-layout {
     display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start;
   }
@@ -422,7 +420,7 @@
   .btn-carnet:hover { background: var(--azul-profundo); color: var(--dorado-claro); }
 
   .carnet-wrap {
-    perspective: 1000px; display: flex; flex-direction: column; align-items: center; gap: 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
   }
   .carnet-card {
     width: 100%; max-width: 380px; aspect-ratio: 1.58 / 1;
@@ -474,7 +472,7 @@
     .barra-layout { grid-template-columns: 1fr; }
   }
 
-  /* TABLA DE POSICIONES */
+  /* TABLA */
   .table-box {
     background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; overflow-x: auto; box-shadow: 0 4px 14px rgba(0,0,0,0.03);
@@ -510,7 +508,7 @@
     font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700;
   }
 
-  /* GALERÍA CON FILTRO POR FECHAS */
+  /* GALERIA */
   .filter-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
   .filter-btn {
     background: var(--crema-card); border: 1px solid var(--borde);
@@ -537,7 +535,7 @@
   .photo-frame img:hover { transform: scale(1.04); }
   .photo-caption { padding: 14px 16px; font-size: 0.88rem; color: #333; flex-grow: 1; }
 
-  /* LIGHTBOX PANTALLA COMPLETA */
+  /* LIGHTBOX */
   .lightbox-overlay {
     position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000;
     display: none; align-items: center; justify-content: center; padding: 20px;
@@ -553,7 +551,7 @@
     color: var(--crema); text-align: center; margin-top: 12px; font-size: 0.95rem; font-weight: 500;
   }
 
-  /* MODAL DE JUGADOR */
+  /* MODAL JUGADOR */
   .modal-overlay {
     position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 999;
     display: none; align-items: center; justify-content: center; padding: 20px;
@@ -621,7 +619,7 @@
   </div>
 </header>
 
-<!-- HERO CON ESCUDO, PRESENTACIÓN Y SPOTIFY -->
+<!-- HERO -->
 <section class="hero" id="proximo">
   <div class="wrap">
     <div class="hero-grid">
@@ -639,12 +637,13 @@
           </div>
         </div>
 
-        <!-- PLAYLIST SPOTIFY DE LA PREVIA -->
         <div class="spotify-box">
           <div class="spotify-title">🎵 Playlist Oficial de la Previa</div>
-          <iframe style="border-radius:8px" src="https://open.spotify.com/playlist/5jOavBfZhcaWUM7NPktQbx?si=86daf76510fd4da6</div>
+          <iframe style="border-radius:8px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
 
-      <!-- PRÓXIMO PARTIDO -->
+      <!-- PROXIMO PARTIDO -->
       <div class="next-match-card">
         <div class="next-head">
           <span>Próxima Fecha</span>
@@ -671,7 +670,6 @@
           <div class="cd-segment"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Seg</span></div>
         </div>
 
-        <!-- TARJETA DEL CLIMA -->
         <div class="match-weather">
           <div>🌤️ Pronóstico Palermo (KDT): <strong>Cielo despejado / Templado</strong></div>
           <div class="weather-temp">19°C</div>
@@ -693,7 +691,7 @@
   </div>
 </section>
 
-<!-- PREVIA: CARA A CARA -->
+<!-- PREVIA CARA A CARA -->
 <section style="padding: 40px 0 0;">
   <div class="wrap">
     <div class="h2h-card">
@@ -740,7 +738,7 @@
   </div>
 </section>
 
-<!-- SECCIÓN TIENDA / CAMISETAS OFICIALES -->
+<!-- CAMISETAS -->
 <section id="camisetas" style="background:#ECE9DF;">
   <div class="wrap">
     <div class="section-title">
@@ -749,7 +747,6 @@
     </div>
 
     <div class="shop-grid">
-      <!-- Camiseta Titular -->
       <div class="jersey-card">
         <div class="jersey-display">
           <img id="img-titular" src="https://i.ibb.co/TDb7PqZs/image.png" alt="Camiseta Titular La Gloria" loading="lazy" decoding="async">
@@ -775,7 +772,6 @@
         </div>
       </div>
 
-      <!-- Camiseta de Arquero -->
       <div class="jersey-card">
         <div class="jersey-display">
           <img id="img-arquero" src="https://i.ibb.co/3m0cJxpD/image.png" alt="Camiseta de Arquero La Gloria" loading="lazy" decoding="async">
@@ -804,7 +800,7 @@
   </div>
 </section>
 
-<!-- ESTADÍSTICAS DEL PLANTEL: GOLEADORES & FIGURA -->
+<!-- ESTADISTICAS -->
 <section id="estadisticas">
   <div class="wrap">
     <div class="section-title">
@@ -813,7 +809,6 @@
     </div>
 
     <div class="stats-layout">
-      <!-- Tabla de Goleadores -->
       <div class="scorers-box">
         <table class="scorers-table">
           <thead>
@@ -825,47 +820,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><strong>1°</strong></td>
-              <td><strong>Simón Martino</strong></td>
-              <td style="color:#666;">#10 · Delantero</td>
-              <td class="goals-col">2</td>
-            </tr>
-            <tr>
-              <td><strong>1°</strong></td>
-              <td><strong>Mendoza</strong></td>
-              <td style="color:#666;">#16 · Delantero</td>
-              <td class="goals-col">2</td>
-            </tr>
-            <tr>
-              <td><strong>1°</strong></td>
-              <td><strong>Fernandez</strong></td>
-              <td style="color:#666;">#17 · Medio Central</td>
-              <td class="goals-col">2</td>
-            </tr>
-            <tr>
-              <td>4°</td>
-              <td>Mansilla</td>
-              <td style="color:#666;">#8 · Medio por Derecha</td>
-              <td class="goals-col">1</td>
-            </tr>
-            <tr>
-              <td>4°</td>
-              <td>Savy</td>
-              <td style="color:#666;">#4 · Polifuncional</td>
-              <td class="goals-col">1</td>
-            </tr>
-            <tr>
-              <td>4°</td>
-              <td>Bossa</td>
-              <td style="color:#666;">#22 · Defensor Izquierdo</td>
-              <td class="goals-col">1</td>
-            </tr>
+            <tr><td><strong>1°</strong></td><td><strong>Simón Martino</strong></td><td style="color:#666;">#10 · Delantero</td><td class="goals-col">2</td></tr>
+            <tr><td><strong>1°</strong></td><td><strong>Mendoza</strong></td><td style="color:#666;">#16 · Delantero</td><td class="goals-col">2</td></tr>
+            <tr><td><strong>1°</strong></td><td><strong>Fernandez</strong></td><td style="color:#666;">#17 · Medio Central</td><td class="goals-col">2</td></tr>
+            <tr><td>4°</td><td>Mansilla</td><td style="color:#666;">#8 · Medio por Derecha</td><td class="goals-col">1</td></tr>
+            <tr><td>4°</td><td>Savy</td><td style="color:#666;">#4 · Polifuncional</td><td class="goals-col">1</td></tr>
+            <tr><td>4°</td><td>Bossa</td><td style="color:#666;">#22 · Defensor Izquierdo</td><td class="goals-col">1</td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Tarjeta MVP / Figura del Torneo -->
       <div class="mvp-card">
         <span class="mvp-badge-top">⭐ Figura del Equipo</span>
         <div class="mvp-name">Conrado</div>
@@ -878,7 +842,7 @@
   </div>
 </section>
 
-<!-- TÁCTICA & PLANTEL -->
+<!-- TACTICA -->
 <section id="tactica" style="background:#ECE9DF;">
   <div class="wrap">
     <div class="section-title">
@@ -892,7 +856,6 @@
         <div class="field-half-line"></div>
         <div class="field-circle"></div>
 
-        <!-- Delantera (2) -->
         <div class="line-layer">
           <div class="player-spot" onclick="abrirFicha('Mendoza', '16', 'Delantero', 'Goleador', '2 goles', 'Definición de primera y movilidad ofensiva.')">
             <div class="shirt">16</div>
@@ -904,7 +867,6 @@
           </div>
         </div>
 
-        <!-- Mediocampo (3) -->
         <div class="line-layer">
           <div class="player-spot" onclick="abrirFicha('Tin', '21', 'Medio Izquierdo', 'Recorrido', '—', 'Despliegue de banda y apoyo continuo.')">
             <div class="shirt">21</div>
@@ -920,7 +882,6 @@
           </div>
         </div>
 
-        <!-- Defensa (2) -->
         <div class="line-layer">
           <div class="player-spot" onclick="abrirFicha('Bossa', '22', 'Defensor Izquierdo', 'Solidez y gol', '1 gol', 'Fuerza en la marca y presencia aérea.')">
             <div class="shirt">22</div>
@@ -932,7 +893,6 @@
           </div>
         </div>
 
-        <!-- Arquero (1) -->
         <div class="line-layer">
           <div class="player-spot" onclick="abrirFicha('Conrado', '1', 'Arquero', 'Muro de TL', '2 MVP', 'Reflejos felinos, voz de mando y figura del equipo.')">
             <div class="shirt gk">1</div>
@@ -941,7 +901,6 @@
         </div>
       </div>
 
-      <!-- Suplentes y Staff -->
       <div class="roster-card">
         <h3 class="serif">Banco de Suplentes</h3>
         <ul class="sub-list">
@@ -964,7 +923,7 @@
   </div>
 </section>
 
-<!-- HISTORIA & PALMARÉS -->
+<!-- HISTORIA -->
 <section id="historia">
   <div class="wrap">
     <div class="section-title">
@@ -985,7 +944,7 @@
 
         <p>
           <strong style="color: var(--azul-noche); font-size: 1.05rem;">2024: El Bautismo en Indiana y la Estrella Eterna.</strong> 
-          El salto a Torneos Indiana marcó un antes y un después. Tras un Apertura que demandó derecho de piso, el Clausura 2024 fue una obra de arte: <strong>campeones invictos a lo largo de 14 batallas</strong>[cite: 3]. Arrancando con un 16-1 histórico ante Fuera de la Caja, sorteando semifinales de fuego y coronando en una final infartante frente a Pichincha: empate 2-2 en el tiempo regular y gloria eterna en los penales por 5-4. El festejo coronó con un asado legendario en Tamarisco, grabado a fuego en la historia grande del club.
+          El salto a Torneos Indiana marcó un antes y un después. Tras un Apertura que demandó derecho de piso, el Clausura 2024 fue una obra de arte: <strong>campeones invictos a lo largo de 14 batallas</strong>. Arrancando con un 16-1 histórico ante Fuera de la Caja, sorteando semifinales de fuego y coronando en una final infartante frente a Pichincha: empate 2-2 en el tiempo regular y gloria eterna en los penales por 5-4. El festejo coronó con un asado legendario en Tamarisco, grabado a fuego en la historia grande del club.
         </p>
 
         <p>
@@ -1000,7 +959,7 @@
       </div>
     </div>
 
-    <!-- PALMARÉS / VITRINA -->
+    <!-- VITRINA -->
     <div class="trophies-grid" style="margin-bottom: 36px;">
       <div class="trophy-card">
         <div class="trophy-icon">🏆</div>
@@ -1025,7 +984,7 @@
       </div>
     </div>
 
-    <!-- CAMPAÑA DEL CAMPEÓN CLAUSURA 2024 -->
+    <!-- FIXTURE 2024 -->
     <div style="background: var(--crema-card); border: 1px solid var(--borde); border-radius: 8px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--azul-noche); padding-bottom: 12px; margin-bottom: 20px;">
         <h3 class="serif" style="font-size: 1.35rem; color: var(--azul-noche); margin: 0;">
@@ -1041,67 +1000,54 @@
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 1</span><strong>La Gloria</strong> vs Fuera de la Caja</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">16 — 1</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 2</span>Deportivo Ancla vs <strong>La Gloria</strong></div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 6</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 3</span><strong>La Gloria</strong> vs Allax FC</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">3 — 1</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 4</span>La Parca vs <strong>La Gloria</strong></div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 5</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 5</span><strong>La Gloria</strong> vs La Vole Nera</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">5 — 0</span>
         </div>
-
-        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 6</span>Puercos FC vs <strong>La Gloria</strong></div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 2</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 7</span>Vartan FC vs <strong>La Gloria</strong></div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 4</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 8</span><strong>La Gloria</strong> vs FC Patagonia</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 0</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 9</span><strong>La Gloria</strong> vs Carucha Lugano</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">3 — 0</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 10</span><strong>La Gloria</strong> vs Los Bola</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">5 — 0</span>
         </div>
-
-        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 11</span>Pichincha vs <strong>La Gloria</strong></div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 2</span>
         </div>
-
         <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:var(--azul-noche); font-size:0.75rem; font-weight:800; display:block;">CUARTOS DE FINAL</span><strong>La Gloria</strong> vs FC Patagonia</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">3 — 0</span>
         </div>
-
-        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
           <div><span style="color:var(--azul-noche); font-size:0.75rem; font-weight:800; display:block;">SEMIFINAL</span><strong>La Gloria</strong> vs Vartan FC</div>
           <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 1</span>
         </div>
-
         <div style="background: rgba(209, 183, 134, 0.2); border: 1px solid var(--dorado); border-left: 5px solid var(--dorado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; grid-column: 1 / -1;">
           <div>
             <span style="color:var(--azul-noche); font-size:0.78rem; font-weight:900; display:block; letter-spacing:0.5px;">🏆 GRAN FINAL (CAMPEÓN)</span>
@@ -1117,7 +1063,7 @@
   </div>
 </section>
 
-<!-- ASOCIATE A LA BARRA DE JUAN BAILON & CARNET DIGITAL -->
+<!-- BARRA Y CARNET -->
 <section id="barra" style="background:#ECE9DF;">
   <div class="wrap">
     <div class="section-title">
@@ -1126,7 +1072,6 @@
     </div>
 
     <div class="barra-layout">
-      <!-- Formulario -->
       <div class="barra-form-card">
         <h3 class="serif" style="font-size:1.3rem; margin-bottom:12px; color:var(--azul-noche);">Sumate a la Hinchada</h3>
         <p style="font-size:0.88rem; color:#555; margin-bottom:16px;">Completá tus datos para generar al instante tu credencial de socio oficial avalada por el Jefe de la Barra.</p>
@@ -1148,7 +1093,6 @@
         <button class="btn-carnet" onclick="generarCarnet()">Emitir Carnet Oficial 🪪</button>
       </div>
 
-      <!-- Previsualización del Carnet -->
       <div class="carnet-wrap">
         <div class="carnet-card" id="carnetBox">
           <img src="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg" class="carnet-watermark" alt="Escudo">
@@ -1178,7 +1122,6 @@
       </div>
     </div>
 
-    <!-- Padrón de Socios -->
     <div class="members-list">
       <h4 style="font-family:'Fraunces', serif; color:var(--azul-noche); font-size:1.1rem;">Padrón de Socios Registrados</h4>
       <div class="members-tags" id="membersList">
@@ -1192,7 +1135,7 @@
   </div>
 </section>
 
-<!-- TABLA DE POSICIONES -->
+<!-- TABLA -->
 <section id="posiciones">
   <div class="wrap">
     <div class="section-title">
@@ -1233,7 +1176,7 @@
   </div>
 </section>
 
-<!-- ÚLTIMOS RESULTADOS -->
+<!-- HISTORIAL -->
 <section id="historial" style="background:#ECE9DF;">
   <div class="wrap">
     <div class="section-title">
@@ -1266,7 +1209,7 @@
   </div>
 </section>
 
-<!-- GALERÍA DE FOTOS CON LIGHTBOX Y FILTRO -->
+<!-- GALERIA -->
 <section id="galeria">
   <div class="wrap">
     <div class="section-title">
@@ -1311,7 +1254,7 @@
   </div>
 </section>
 
-<!-- LIGHTBOX MODAL PANTALLA COMPLETA -->
+<!-- LIGHTBOX -->
 <div class="lightbox-overlay" id="lightboxModal" onclick="cerrarLightbox(event)">
   <div class="lightbox-img-box" onclick="event.stopPropagation()">
     <button class="lightbox-close" onclick="cerrarLightboxDirecto()">✕</button>
@@ -1320,7 +1263,7 @@
   </div>
 </div>
 
-<!-- MODAL FLOTANTE DE FICHA DE JUGADOR -->
+<!-- MODAL FICHA JUGADOR -->
 <div class="modal-overlay" id="playerModal" onclick="cerrarFicha(event)">
   <div class="player-modal" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="cerrarFichaDirecto()">✕</button>
@@ -1363,13 +1306,13 @@
 </footer>
 
 <script>
-  // Menú Responsive
+  // Menu Responsive
   const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
   menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-  // SELECTOR FRENTE / DORSAL DE CAMISETAS
+  // Switch de camiseta
   function cambiarVista(tipo, lado, url, btn) {
     const img = document.getElementById(`img-${tipo}`);
     if (!img) return;
@@ -1384,7 +1327,7 @@
     btn.classList.add('active');
   }
 
-  // CUENTA REGRESIVA DINÁMICA: Sábado 19/09/2026 a las 16:00 hs
+  // Cuenta regresiva: Sabado 19/09/2026 a las 16:00 hs
   const matchDate = new Date("2026-09-19T16:00:00-03:00").getTime();
 
   function updateCountdown() {
@@ -1410,7 +1353,7 @@
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  // FILTRO DE FOTOS POR FECHA
+  // Filtro de fotos
   function filtrarFotos(fecha, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -1425,7 +1368,7 @@
     });
   }
 
-  // LIGHTBOX (PANTALLA COMPLETA PARA FOTOS)
+  // Lightbox
   function abrirLightbox(url, caption) {
     document.getElementById('lightboxImg').src = url;
     document.getElementById('lightboxCap').innerText = caption;
@@ -1442,7 +1385,7 @@
     document.getElementById('lightboxModal').classList.remove('active');
   }
 
-  // MODAL DE FICHAS DE JUGADORES
+  // Ficha de jugador
   function abrirFicha(nombre, dorsal, posicion, rol, stat, desc) {
     document.getElementById('mShirt').innerText = dorsal;
     if (dorsal === '1') {
@@ -1468,7 +1411,7 @@
     document.getElementById('playerModal').classList.remove('active');
   }
 
-  // CARNET DE SOCIO CON PERSISTENCIA
+  // Carnet con localStorage
   const SOCIO_INICIAL = 43;
 
   function cargarSociosGuardados() {
@@ -1523,12 +1466,12 @@
     alert('¡Carnet oficial emitido! Ya podés tocar "Descargar Carnet" para subirlo a tus historias.');
   }
 
-  // DESCARGAR CARNET COMO IMAGEN PNG
+  // Descarga PNG
   function descargarCarnet() {
     const carnetElement = document.getElementById('carnetBox');
     
     html2canvas(carnetElement, {
-      scale: 3, // Alta definición
+      scale: 3,
       useCORS: true,
       backgroundColor: '#111A27'
     }).then(canvas => {
