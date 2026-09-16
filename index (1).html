@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Gloria TL — Torneo Indiana F8</title>
 
-<!-- FAVICON & OPEN GRAPH (VISTA PREVIA EN WHATSAPP / INSTAGRAM) -->
+<!-- FAVICON & OPEN GRAPH (PREVISUALIZACIÓN EN REDES) -->
 <link rel="icon" type="image/jpeg" href="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg">
 <meta property="og:title" content="La Gloria TL — Sitio Oficial">
-<meta property="og:description" content="Equipo de Fútbol 8 de Trenque Lauquen en Torneo Indiana (CABA). Fixture, tabla, estadísticas y camisetas oficiales.">
+<meta property="og:description" content="Equipo de Fútbol 8 de Trenque Lauquen en Torneo Indiana (CABA). Fixture, tabla, estadísticas, camisetas y carnet de socio.">
 <meta property="og:image" content="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg">
 <meta property="og:url" content="https://lagloriatl.netlify.app/">
 <meta property="og:type" content="website">
@@ -63,9 +63,9 @@
   .brand-name { color: var(--crema); font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 800; }
   .brand-name span { color: var(--dorado); font-style: italic; }
 
-  nav.links { display: flex; gap: 20px; align-items: center; }
+  nav.links { display: flex; gap: 16px; align-items: center; }
   nav.links a {
-    color: var(--crema); font-size: 0.9rem; font-weight: 500; opacity: 0.85; transition: 0.2s;
+    color: var(--crema); font-size: 0.88rem; font-weight: 500; opacity: 0.85; transition: 0.2s;
   }
   nav.links a:hover { opacity: 1; color: var(--dorado-claro); }
   .nav-ig-btn {
@@ -80,15 +80,15 @@
     display: none; background: none; border: none; color: var(--crema); font-size: 1.6rem; cursor: pointer;
   }
 
-  @media (max-width: 920px) {
+  @media (max-width: 980px) {
     nav.links {
       position: absolute; top: 70px; left: 0; right: 0;
       background: var(--azul-noche); flex-direction: column; align-items: flex-start;
-      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
       border-bottom: 2px solid var(--dorado);
     }
-    nav.links.open { max-height: 520px; }
-    nav.links a { padding: 14px 20px; border-top: 1px solid rgba(255,255,255,0.08); width: 100%; }
+    nav.links.open { max-height: 600px; }
+    nav.links a { padding: 12px 20px; border-top: 1px solid rgba(255,255,255,0.08); width: 100%; }
     .menu-btn { display: block; }
   }
 
@@ -100,7 +100,7 @@
     border-bottom: 1px solid rgba(209, 183, 134, 0.2);
   }
   .hero-grid {
-    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: center;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center;
   }
   .hero-tag {
     color: var(--dorado); font-size: 0.85rem; font-weight: 700;
@@ -166,8 +166,16 @@
   .cd-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--dorado); line-height: 1; }
   .cd-label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.7; margin-top: 4px; }
 
+  /* WIDGET DEL CLIMA */
+  .match-weather {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(209, 183, 134, 0.2);
+    padding: 8px 14px; border-radius: 6px; margin-top: 14px; font-size: 0.85rem;
+  }
+  .weather-temp { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; color: var(--dorado); }
+
   .match-venue {
-    margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.08);
     font-size: 0.85rem; text-align: center; color: rgba(247, 245, 239, 0.85);
   }
   .match-actions {
@@ -183,7 +191,7 @@
   .btn-cal { background: transparent; border: 1px solid var(--dorado); color: var(--dorado-claro); }
   .btn-cal:hover { background: rgba(209, 183, 134, 0.15); transform: translateY(-1px); }
 
-  /* CARA A CARA (HEAD TO HEAD) */
+  /* PREVIA CARA A CARA */
   .h2h-card {
     background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; padding: 24px; margin-bottom: 40px;
@@ -252,12 +260,8 @@
     font-weight: 700; padding: 4px 10px; border-radius: 12px; cursor: pointer;
     transition: 0.2s;
   }
-  .view-btn.active {
-    background: var(--dorado); color: var(--azul-profundo);
-  }
-  .jersey-details {
-    padding: 22px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1;
-  }
+  .view-btn.active { background: var(--dorado); color: var(--azul-profundo); }
+  .jersey-details { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
   .jersey-details h3 { font-size: 1.35rem; color: var(--azul-noche); }
   .jersey-price { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: var(--azul-noche); }
   .jersey-price span { font-size: 0.85rem; color: #777; font-family: 'IBM Plex Sans', sans-serif; font-weight: 400; }
@@ -273,7 +277,7 @@
   }
   .btn-order:hover { background: #1EBE5D; transform: translateY(-1px); }
 
-  /* ESTADÍSTICAS INDIVIDUALES */
+  /* ESTADÍSTICAS */
   .stats-layout {
     display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start;
   }
@@ -281,16 +285,13 @@
     background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.03);
   }
-  .scorers-table {
-    width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem;
-  }
+  .scorers-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
   .scorers-table th, .scorers-table td { padding: 12px 16px; }
   .scorers-table th {
     background: var(--azul-noche); color: var(--dorado-claro);
     font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
   }
   .scorers-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
-  .scorers-table tr:last-child { border-bottom: none; }
   .scorers-table td.goals-col {
     font-weight: 800; color: var(--azul-noche); font-size: 1.1rem; text-align: center;
   }
@@ -313,10 +314,6 @@
   }
   .mvp-desc { font-size: 0.86rem; opacity: 0.85; max-width: 280px; margin: 0 auto; }
 
-  @media (max-width: 768px) {
-    .stats-layout { grid-template-columns: 1fr; }
-  }
-
   /* TÁCTICA & CANCHA */
   .tactics-wrapper {
     display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: start;
@@ -338,7 +335,8 @@
     border: 2px solid var(--linea-cancha); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none;
   }
   .line-layer { display: flex; justify-content: space-around; width: 100%; z-index: 2; position: relative; }
-  .player-spot { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .player-spot { display: flex; flex-direction: column; align-items: center; gap: 3px; cursor: pointer; transition: 0.2s; }
+  .player-spot:hover { transform: scale(1.1); }
   .shirt {
     width: 38px; height: 38px; border-radius: 50%;
     background: var(--azul-noche); border: 2px solid var(--dorado);
@@ -353,7 +351,6 @@
     white-space: nowrap;
   }
 
-  /* SUPLENTES & STAFF */
   .roster-card {
     background: var(--crema-card); border: 1px solid var(--borde);
     border-radius: 8px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);
@@ -362,18 +359,99 @@
     font-size: 1.25rem; margin-bottom: 12px; border-bottom: 1px solid var(--borde); padding-bottom: 6px;
   }
   .sub-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
-  .sub-item { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 6px 0; border-bottom: 1px dashed rgba(0,0,0,0.08); }
-  .sub-item strong { color: var(--azul-noche); }
+  .sub-item {
+    display: flex; justify-content: space-between; font-size: 0.9rem; padding: 6px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.08); cursor: pointer;
+  }
+  .sub-item:hover { color: var(--dorado); }
   .staff-box {
     background: #F1EFE6; border-left: 3px solid var(--dorado);
     padding: 14px; border-radius: 0 6px 6px 0;
   }
   .staff-item { font-size: 0.88rem; margin-bottom: 6px; display: flex; justify-content: space-between; }
-  .staff-item:last-child { margin-bottom: 0; }
   .staff-role { font-weight: 600; color: var(--azul-noche); }
 
+  /* HISTORIA & PALMARÉS */
+  .history-narrative {
+    background: var(--crema-card); border: 1px solid var(--borde);
+    border-radius: 8px; padding: 30px; margin-bottom: 30px; line-height: 1.7;
+  }
+  .trophies-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;
+  }
+  .trophy-card {
+    background: var(--crema-card); border: 1px solid var(--borde);
+    border-left: 4px solid var(--dorado); border-radius: 6px; padding: 18px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .trophy-icon { font-size: 2.2rem; }
+  .trophy-title { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700; color: var(--azul-noche); }
+  .trophy-sub { font-size: 0.85rem; color: #666; }
+
+  /* ASOCIATE A LA BARRA & CARNET DIGITAL */
+  .barra-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start;
+  }
+  .barra-form-card {
+    background: var(--crema-card); border: 1px solid var(--borde);
+    border-radius: 8px; padding: 26px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; color: var(--azul-noche); }
+  .form-group input, .form-group select {
+    width: 100%; padding: 10px 12px; border: 1px solid #CCC; border-radius: 4px;
+    font-family: inherit; font-size: 0.9rem;
+  }
+  .btn-carnet {
+    width: 100%; background: var(--azul-noche); color: var(--dorado);
+    border: 2px solid var(--dorado); padding: 12px; font-weight: 700;
+    border-radius: 4px; cursor: pointer; transition: 0.2s; font-size: 0.95rem;
+  }
+  .btn-carnet:hover { background: var(--azul-profundo); color: var(--dorado-claro); }
+
+  .carnet-wrap {
+    perspective: 1000px; display: flex; flex-direction: column; align-items: center; gap: 14px;
+  }
+  .carnet-card {
+    width: 100%; max-width: 380px; aspect-ratio: 1.58 / 1;
+    background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-noche) 100%);
+    border: 2px solid var(--dorado); border-radius: 12px;
+    padding: 20px; color: var(--crema); box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    display: flex; flex-direction: column; justify-content: space-between; position: relative;
+    overflow: hidden;
+  }
+  .carnet-watermark {
+    position: absolute; right: -20px; bottom: -20px; width: 150px; opacity: 0.08; pointer-events: none;
+  }
+  .carnet-header { display: flex; justify-content: space-between; align-items: center; }
+  .carnet-header img { height: 38px; width: auto; }
+  .carnet-type { font-size: 0.72rem; font-weight: 800; color: var(--dorado); text-transform: uppercase; letter-spacing: 1.5px; }
+  .carnet-body { display: flex; align-items: center; gap: 16px; margin: 10px 0; }
+  .carnet-avatar {
+    width: 58px; height: 58px; border-radius: 50%; background: var(--crema);
+    border: 2px solid var(--dorado); display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; color: var(--azul-noche); flex-shrink: 0;
+  }
+  .carnet-name { font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--dorado-claro); line-height: 1.1; }
+  .carnet-role { font-size: 0.8rem; opacity: 0.8; }
+  .carnet-footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-top: 1px solid rgba(209, 183, 134, 0.2); padding-top: 8px;
+  }
+  .carnet-id { font-family: monospace; font-size: 0.85rem; color: var(--dorado); font-weight: 700; }
+  .carnet-sign { font-size: 0.72rem; text-align: right; opacity: 0.75; }
+
+  .members-list {
+    margin-top: 24px; background: var(--crema-card); border: 1px solid var(--borde);
+    border-radius: 8px; padding: 20px;
+  }
+  .members-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .member-tag {
+    background: #EAE6D9; padding: 4px 10px; border-radius: 14px; font-size: 0.8rem; font-weight: 600;
+  }
+
   @media (max-width: 768px) {
-    .tactics-wrapper { grid-template-columns: 1fr; }
+    .barra-layout { grid-template-columns: 1fr; }
   }
 
   /* TABLA DE POSICIONES */
@@ -412,7 +490,14 @@
     font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700;
   }
 
-  /* GALERÍA DE FOTOS */
+  /* GALERÍA CON FILTRO POR FECHAS */
+  .filter-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+  .filter-btn {
+    background: var(--crema-card); border: 1px solid var(--borde);
+    padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;
+    cursor: pointer; transition: 0.2s; color: var(--azul-noche);
+  }
+  .filter-btn.active { background: var(--azul-noche); color: var(--dorado-claro); border-color: var(--azul-noche); }
   .photos-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;
   }
@@ -431,6 +516,36 @@
   }
   .photo-frame img:hover { transform: scale(1.03); }
   .photo-caption { padding: 14px 16px; font-size: 0.88rem; color: #333; flex-grow: 1; }
+
+  /* MODAL DE JUGADOR */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 999;
+    display: none; align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.active { display: flex; }
+  .player-modal {
+    background: var(--crema-card); border: 2px solid var(--dorado);
+    border-radius: 10px; max-width: 400px; width: 100%; padding: 26px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4); text-align: center; position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 12px; right: 16px; background: none; border: none;
+    font-size: 1.4rem; cursor: pointer; color: #777;
+  }
+  .modal-shirt {
+    width: 65px; height: 65px; border-radius: 50%; margin: 0 auto 12px;
+    background: var(--azul-noche); border: 3px solid var(--dorado); color: var(--dorado);
+    display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 900;
+  }
+  .modal-shirt.gk { background: #E85D04; border-color: #FFF; color: #FFF; }
+  .modal-player-name { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--azul-noche); }
+  .modal-player-pos { font-size: 0.88rem; font-weight: 700; color: var(--dorado); text-transform: uppercase; margin-bottom: 12px; }
+  .modal-stats-row {
+    display: flex; justify-content: space-around; background: #F1EFE6;
+    padding: 10px; border-radius: 6px; margin: 14px 0;
+  }
+  .m-stat-val { font-weight: 800; font-size: 1.15rem; color: var(--azul-noche); }
+  .m-stat-lbl { font-size: 0.72rem; text-transform: uppercase; opacity: 0.7; }
 
   /* FOOTER */
   footer {
@@ -453,10 +568,12 @@
       <div class="brand-name">LA <span>GLORIA</span> TL</div>
     </div>
     <nav class="links" id="navLinks">
-      <a href="#proximo">Próximo Partido</a>
+      <a href="#proximo">Próximo Match</a>
       <a href="#camisetas">Camisetas</a>
-      <a href="#estadisticas">Goleadores & MVP</a>
-      <a href="#tactica">Formación</a>
+      <a href="#estadisticas">Goleadores</a>
+      <a href="#tactica">Plantel</a>
+      <a href="#historia">Historia & Palmarés</a>
+      <a href="#barra">Socios</a>
       <a href="#posiciones">Tabla Super A TT</a>
       <a href="#historial">Resultados</a>
       <a href="#galeria">Fotos</a>
@@ -468,14 +585,14 @@
   </div>
 </header>
 
-<!-- HERO CON ESCUDO Y FOTO DE PRESENTACIÓN -->
+<!-- HERO CON ESCUDO Y PRESENTACIÓN -->
 <section class="hero" id="proximo">
   <div class="wrap">
     <div class="hero-grid">
       <div>
         <div class="hero-tag">Torneo Indiana · F8 Hombres Super A TT</div>
         <h1>La <span style="color:var(--dorado); font-style:italic;">Gloria</span></h1>
-        <p class="desc">Equipo de fútbol 8 con el corazón en Trenque Lauquen compitiendo en Capital. Fixture, indumentaria oficial, esquema táctico y tabla actualizada en tiempo real.</p>
+        <p class="desc">Equipo de fútbol 8 con el corazón en Trenque Lauquen compitiendo en Capital. Fixture, indumentaria oficial, esquema táctico y comunidad de socios.</p>
         
         <div class="hero-welcome-box">
           <img src="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg" alt="Escudo Oficial La Gloria" class="hero-escudo-main" decoding="async">
@@ -514,13 +631,18 @@
           <div class="cd-segment"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Seg</span></div>
         </div>
 
+        <!-- TARJETA DEL CLIMA -->
+        <div class="match-weather">
+          <div>🌤️ Pronóstico Palermo (KDT): <strong>Cielo despejado / Templado</strong></div>
+          <div class="weather-temp">19°C</div>
+        </div>
+
         <div class="match-venue">
           <div>📍 <strong>Circuito KDT</strong> — Jerónimo Salguero 3450, Palermo, CABA</div>
           <div class="match-actions">
             <a href="https://maps.google.com/?q=Circuito+KDT+Jeronimo+Salguero+3450" target="_blank" rel="noopener noreferrer" class="btn-maps">
               🗺️ Abrir Maps
             </a>
-            <!-- AGREGAR A GOOGLE CALENDAR -->
             <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=La+Gloria+vs+CA+Decadentes+(F8)&dates=20260919T190000Z/20260919T203000Z&details=Torneo+Indiana+Super+A+TT+-+Cancha+KDT&location=Circuito+KDT,+Jeronimo+Salguero+3450,+Palermo,+CABA" target="_blank" rel="noopener noreferrer" class="btn-cal">
               📅 Agendar
             </a>
@@ -531,7 +653,7 @@
   </div>
 </section>
 
-<!-- PREVIA: CARA A CARA (HEAD TO HEAD) -->
+<!-- PREVIA: CARA A CARA -->
 <section style="padding: 40px 0 0;">
   <div class="wrap">
     <div class="h2h-card">
@@ -633,7 +755,7 @@
             <span class="size-pill">XXL</span>
           </div>
           <div class="jersey-price">Consultar valor <span>/ Edición Limitada</span></div>
-          <a href=""https://api.whatsapp.com/send?phone=5492392503561&text=Hola!%20Quiero%20encargar%20la%20Camiseta%20de%20Arquero%20de%20La%20Gloria%20TL" target="_blank" rel="noopener noreferrer" class="btn-order">
+          <a href="https://api.whatsapp.com/send?phone=5492392503561&text=Hola!%20Quiero%20encargar%20la%20Camiseta%20de%20Arquero%20de%20La%20Gloria%20TL" target="_blank" rel="noopener noreferrer" class="btn-order">
             Pedir por WhatsApp 💬
           </a>
         </div>
@@ -721,7 +843,7 @@
   <div class="wrap">
     <div class="section-title">
       <h2>Formación Táctica</h2>
-      <span>Esquema 1-2-3-2</span>
+      <span>Tocá cualquier camiseta para ver ficha</span>
     </div>
 
     <div class="tactics-wrapper">
@@ -732,11 +854,11 @@
 
         <!-- Delantera (2) -->
         <div class="line-layer">
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Mendoza', '16', 'Delantero', 'Goleador', '2 goles', 'Definición de primera y movilidad ofensiva.')">
             <div class="shirt">16</div>
             <span class="spot-name">Mendoza</span>
           </div>
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Simón Martino', '10', 'Delantero / Enganche', 'Capitán ofensivo', '2 goles', 'Desequilibrio individual y pegada.')">
             <div class="shirt">10</div>
             <span class="spot-name">Simón Martino</span>
           </div>
@@ -744,15 +866,15 @@
 
         <!-- Mediocampo (3) -->
         <div class="line-layer">
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Tin', '21', 'Medio Izquierdo', 'Recorrido', '—', 'Despliegue de banda y apoyo continuo.')">
             <div class="shirt">21</div>
             <span class="spot-name">Tin</span>
           </div>
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Fernandez', '17', 'Medio Central', 'Eje y llegada', '2 goles', 'Visión panorámica, pase filtrado y gol.')">
             <div class="shirt">17</div>
             <span class="spot-name">Fernandez</span>
           </div>
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Mansilla', '8', 'Medio Derecho', 'Velocidad', '1 gol', 'Encarador nato y potencia por banda.')">
             <div class="shirt">8</div>
             <span class="spot-name">Mansilla</span>
           </div>
@@ -760,11 +882,11 @@
 
         <!-- Defensa (2) -->
         <div class="line-layer">
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Bossa', '22', 'Defensor Izquierdo', 'Solidez y gol', '1 gol', 'Fuerza en la marca y presencia aérea.')">
             <div class="shirt">22</div>
             <span class="spot-name">Bossa</span>
           </div>
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Nehuen', '2', 'Defensor Central / Derecho', 'Seguridad', '—', 'Orden en el fondo y anticipo.')">
             <div class="shirt">2</div>
             <span class="spot-name">Nehuen</span>
           </div>
@@ -772,7 +894,7 @@
 
         <!-- Arquero (1) -->
         <div class="line-layer">
-          <div class="player-spot">
+          <div class="player-spot" onclick="abrirFicha('Conrado', '1', 'Arquero', 'Muro de TL', '2 MVP', 'Reflejos felinos, voz de mando y figura del equipo.')">
             <div class="shirt gk">1</div>
             <span class="spot-name">Conrado</span>
           </div>
@@ -783,12 +905,12 @@
       <div class="roster-card">
         <h3 class="serif">Banco de Suplentes</h3>
         <ul class="sub-list">
-          <li class="sub-item"><span><strong>#6</strong> Recondo</span> <span style="color:#777;">Suplente</span></li>
-          <li class="sub-item"><span><strong>#22</strong> Titi</span> <span style="color:#777;">Suplente</span></li>
-          <li class="sub-item"><span><strong>#7</strong> Luppi</span> <span style="color:#777;">Suplente</span></li>
-          <li class="sub-item"><span><strong>#18</strong> Líbano</span> <span style="color:#777;">Suplente</span></li>
-          <li class="sub-item"><span><strong>#4</strong> Savy</span> <span style="color:#777;">Suplente</span></li>
-          <li class="sub-item"><span><strong>#10</strong> Facu</span> <span style="color:#777;">Suplente</span></li>
+          <li class="sub-item" onclick="abrirFicha('Recondo', '6', 'Defensor', 'Recambio de garantías', '—', 'Intensidad en la marca.')"><span><strong>#6</strong> Recondo</span> <span style="color:#777;">Ver ficha ↗</span></li>
+          <li class="sub-item" onclick="abrirFicha('Titi', '22', 'Polifuncional', 'Entrega total', '—', 'Aporte en cualquier sector.')"><span><strong>#22</strong> Titi</span> <span style="color:#777;">Ver ficha ↗</span></li>
+          <li class="sub-item" onclick="abrirFicha('Luppi', '7', 'Delantero', 'Velocidad', '—', 'Desborde y frescura.')"><span><strong>#7</strong> Luppi</span> <span style="color:#777;">Ver ficha ↗</span></li>
+          <li class="sub-item" onclick="abrirFicha('Líbano', '18', 'Mediocampista', 'Orden', '—', 'Control del ritmo.')"><span><strong>#18</strong> Líbano</span> <span style="color:#777;">Ver ficha ↗</span></li>
+          <li class="sub-item" onclick="abrirFicha('Savy', '4', 'Polifuncional', 'Gol y marca', '1 gol', 'Aparición sorpresiva en ataque.')"><span><strong>#4</strong> Savy</span> <span style="color:#777;">Ver ficha ↗</span></li>
+          <li class="sub-item" onclick="abrirFicha('Facu', '10', 'Ofensivo', 'Creatividad', '—', 'Juego asociado.')"><span><strong>#10</strong> Facu</span> <span style="color:#777;">Ver ficha ↗</span></li>
         </ul>
 
         <h3 class="serif">Cuerpo Técnico & Barra</h3>
@@ -797,6 +919,232 @@
           <div class="staff-item"><span class="staff-role">Ayudante de Campo:</span> <span>Agustín Medina</span></div>
           <div class="staff-item"><span class="staff-role">Jefe de la Barra:</span> <span>Juan Bailon</span></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA & PALMARÉS -->
+<section id="historia">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Historia & Palmarés</h2>
+      <span>La Mística de La Gloria TL</span>
+    </div>
+
+    <!-- CRÓNICA HISTÓRICA -->
+    <div class="history-narrative">
+      <h3 class="serif" style="font-size: 1.55rem; color: var(--azul-noche); margin-bottom: 16px;">
+        Forjados en el barro, la amistad y el calor
+      </h3>
+
+      <div style="display: flex; flex-direction: column; gap: 18px; color: #3A4553; font-size: 0.96rem; line-height: 1.75;">
+        <p>
+          <strong style="color: var(--azul-noche); font-size: 1.05rem;">2023: El Génesis de la Vieja Guardia.</strong> 
+          Todo nació con el desembarco en Buenos Aires. La vieja guardia comenzó a escribir las primeras páginas en las canchas sintéticas de Palermo Hollywood compitiendo en torneos Futgol. Una experiencia áspera, accidentada y plagada de anécdotas de supervivencia —con el recordado episodio donde el Medi casi deja la vida en manos de Murillo—. El torneo era flojo, pero el grupo entendió que estaba hecho para batallas más grandes.
+        </p>
+
+        <p>
+          <strong style="color: var(--azul-noche); font-size: 1.05rem;">2024: El Bautismo en Indiana y la Estrella Eterna.</strong> 
+          El salto a Torneos Indiana marcó un antes y un después. Tras un Apertura que demandó derecho de piso, el Clausura 2024 fue una obra de arte: <strong>campeones invictos a lo largo de 14 batallas</strong>. Arrancando con un 16-1 histórico ante Fuera de la Caja, sorteando semifinales de fuego y coronando en una final infartante frente a Pichincha: empate 2-2 en el tiempo regular y gloria eterna en los penales por 5-4. El festejo coronó con un asado legendario en Tamarisco, grabado a fuego en la historia grande del club.
+        </p>
+
+        <p>
+          <strong style="color: var(--azul-noche); font-size: 1.05rem;">2025: El Muro de Oro y la Ley del Verano.</strong> 
+          El guión volvió a repetirse: un Apertura cuesta arriba y una levantada monumental en el Clausura. Porque a La Gloria le sienta bien el sol, la primavera y el calor de los sábados decisivos. El equipo metió un sprint demoledor hasta alcanzar la Final de la Copa de Oro, cayendo de pie en una definición apretadísima que dejó la vara en lo más alto.
+        </p>
+
+        <p>
+          <strong style="color: var(--azul-noche); font-size: 1.05rem;">2026: Sangre Nueva y la Ilusión Intacta.</strong> 
+          Tras otro Apertura complejo, el club activó una renovación de jerarquía sumando refuerzos de peso para darle oxígeno a las líneas. Hoy, el Clausura de la Super A TT vuelve a mostrar la mejor cara de La Gloria, dando pelea en los puestos de vanguardia con el sueño intacto de bordar otra estrella.
+        </p>
+      </div>
+    </div>
+
+    <!-- PALMARÉS / VITRINA -->
+    <div class="trophies-grid" style="margin-bottom: 36px;">
+      <div class="trophy-card">
+        <div class="trophy-icon">🏆</div>
+        <div>
+          <div class="trophy-title">Campeón Invicto Clausura 2024</div>
+          <div class="trophy-sub">Torneo Indiana F8 · 14 partidos invicto (Final 2-2 / 5-4 penales vs Pichincha)</div>
+        </div>
+      </div>
+      <div class="trophy-card">
+        <div class="trophy-icon">🥈</div>
+        <div>
+          <div class="trophy-title">Subcampeón Copa de Oro 2025</div>
+          <div class="trophy-sub">Torneo Indiana F8 Clausura · Finalistas de la máxima categoría</div>
+        </div>
+      </div>
+      <div class="trophy-card">
+        <div class="trophy-icon">🛡️</div>
+        <div>
+          <div class="trophy-title">Valla Menos Vencida & 2 MVP</div>
+          <div class="trophy-sub">Seguridad bajo los tres palos con Conrado (#1)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAÑA DEL CAMPEÓN CLAUSURA 2024 (14 PARTIDOS) -->
+    <div style="background: var(--crema-card); border: 1px solid var(--borde); border-radius: 8px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--azul-noche); padding-bottom: 12px; margin-bottom: 20px;">
+        <h3 class="serif" style="font-size: 1.35rem; color: var(--azul-noche); margin: 0;">
+          Campaña del Campeón Invicto · Clausura 2024
+        </h3>
+        <span style="font-size: 0.8rem; font-weight: 800; background: var(--ganado); color: #FFF; padding: 3px 10px; border-radius: 12px; text-transform: uppercase;">
+          11G - 3E - 0P
+        </span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 1</span><strong>La Gloria</strong> vs Fuera de la Caja</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">16 — 1</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 2</span>Deportivo Ancla vs <strong>La Gloria</strong></div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 6</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 3</span><strong>La Gloria</strong> vs Allax FC</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">3 — 1</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 4</span>La Parca vs <strong>La Gloria</strong></div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 5</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 5</span><strong>La Gloria</strong> vs La Vole Nera</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">5 — 0</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 6</span>Puercos FC vs <strong>La Gloria</strong></div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 2</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 7</span>Vartan FC vs <strong>La Gloria</strong></div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 4</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 8</span><strong>La Gloria</strong> vs FC Patagonia</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 0</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 9</span><strong>La Gloria</strong> vs Carucha Lugano</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">3 — 0</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 10</span><strong>La Gloria</strong> vs Los Bola</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">5 — 0</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:#777; font-size:0.75rem; font-weight:700; display:block;">FECHA 11</span>Pichincha vs <strong>La Gloria</strong></div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">2 — 2</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--ganado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:var(--azul-noche); font-size:0.75rem; font-weight:800; display:block;">CUARTOS DE FINAL</span><strong>La Gloria</strong> vs FC Patagonia</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">3 — 0</span>
+        </div>
+
+        <div style="background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-left: 4px solid var(--empatado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+          <div><span style="color:var(--azul-noche); font-size:0.75rem; font-weight:800; display:block;">SEMIFINAL</span><strong>La Gloria</strong> vs Vartan FC</div>
+          <span style="font-family:'Fraunces', serif; font-weight:900; font-size:1.15rem; color:var(--azul-noche);">1 — 1</span>
+        </div>
+
+        <div style="background: rgba(209, 183, 134, 0.2); border: 1px solid var(--dorado); border-left: 5px solid var(--dorado); padding: 10px 14px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; grid-column: 1 / -1;">
+          <div>
+            <span style="color:var(--azul-noche); font-size:0.78rem; font-weight:900; display:block; letter-spacing:0.5px;">🏆 GRAN FINAL (CAMPEÓN)</span>
+            <strong>La Gloria</strong> vs Pichincha
+          </div>
+          <div style="text-align: right;">
+            <div style="font-family:'Fraunces', serif; font-weight:900; font-size:1.25rem; color:var(--azul-noche); line-height:1;">2 — 2</div>
+            <span style="font-size:0.78rem; font-weight:800; color:var(--ganado);">(5-4 Penales)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASOCIATE A LA BARRA DE JUAN BAILON & CARNET DIGITAL -->
+<section id="barra" style="background:#ECE9DF;">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>La Barra de Juan Bailon</h2>
+      <span>Hacete Socio Oficial y Llevate tu Carnet</span>
+    </div>
+
+    <div class="barra-layout">
+      <!-- Formulario -->
+      <div class="barra-form-card">
+        <h3 class="serif" style="font-size:1.3rem; margin-bottom:12px; color:var(--azul-noche);">Sumate a la Hinchada</h3>
+        <p style="font-size:0.88rem; color:#555; margin-bottom:16px;">Completá tus datos para generar al instante tu credencial de socio oficial avalada por el Jefe de la Barra.</p>
+
+        <div class="form-group">
+          <label>Nombre y Apellido / Apodo:</label>
+          <input type="text" id="socioNombre" placeholder="Ej: Marcos 'El Ruso' Gómez">
+        </div>
+        <div class="form-group">
+          <label>Puesto en la Barra:</label>
+          <select id="socioRol">
+            <option value="Socio Activo de Tribuna">Socio Activo de Tribuna</option>
+            <option value="Cebador Oficial de Mate">Cebador Oficial de Mate</option>
+            <option value="Especialista en Tercer Tiempo">Especialista en Tercer Tiempo</option>
+            <option value="Asador Designado">Asador Designado</option>
+            <option value="Banderero Mayor">Banderero Mayor</option>
+          </select>
+        </div>
+        <button class="btn-carnet" onclick="generarCarnet()">Emitir Carnet Oficial 🪪</button>
+      </div>
+
+      <!-- Previsualización del Carnet -->
+      <div class="carnet-wrap">
+        <div class="carnet-card" id="carnetBox">
+          <img src="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg" class="carnet-watermark" alt="Escudo">
+          <div class="carnet-header">
+            <img src="https://i.ibb.co/S7JTZrvh/escudo-gloria.jpg" alt="Logo">
+            <span class="carnet-type">BARRA DE JUAN BAILON</span>
+          </div>
+          <div class="carnet-body">
+            <div class="carnet-avatar" id="avatarChar">👤</div>
+            <div>
+              <div class="carnet-name" id="cardName">Hincha de Gloria</div>
+              <div class="carnet-role" id="cardRole">Socio Activo de Tribuna</div>
+            </div>
+          </div>
+          <div class="carnet-footer">
+            <div class="carnet-id" id="cardId">SOCIO #042</div>
+            <div class="carnet-sign">
+              <div>✍️ Juan Bailon</div>
+              <div style="font-size:0.65rem;">JEFE DE BARRA</div>
+            </div>
+          </div>
+        </div>
+        <span style="font-size:0.8rem; color:#666;">✨ Hacé una captura de pantalla a tu carnet y compartilo en tus historias.</span>
+      </div>
+    </div>
+
+    <!-- Padrón de Socios -->
+    <div class="members-list">
+      <h4 style="font-family:'Fraunces', serif; color:var(--azul-noche); font-size:1.1rem;">Padrón de Socios Registrados</h4>
+      <div class="members-tags" id="membersList">
+        <span class="member-tag">⭐ Juan Bailon (#001)</span>
+        <span class="member-tag">Facundo Samame (#002)</span>
+        <span class="member-tag">Agustín Medina (#003)</span>
+        <span class="member-tag">Conrado (#004)</span>
+        <span class="member-tag">Simón Martino (#005)</span>
       </div>
     </div>
   </div>
@@ -876,16 +1224,22 @@
   </div>
 </section>
 
-<!-- GALERÍA DE FOTOS REALES -->
+<!-- GALERÍA DE FOTOS CON FILTRO POR FECHAS -->
 <section id="galeria">
   <div class="wrap">
     <div class="section-title">
       <h2>Galería del Equipo</h2>
-      <span>Sábados de Gloria · Torneos Indiana</span>
+      <span>Momentos Inmortalizados</span>
+    </div>
+
+    <div class="filter-pills">
+      <button class="filter-btn active" onclick="filtrarFotos('todas', this)">Todas las fechas</button>
+      <button class="filter-btn" onclick="filtrarFotos('azopardo', this)">Azopardo (14/09)</button>
+      <button class="filter-btn" onclick="filtrarFotos('kdt', this)">Próxima fecha (KDT)</button>
     </div>
 
     <div class="photos-grid">
-      <div class="photo-card">
+      <div class="photo-card" data-date="azopardo">
         <div class="photo-frame">
           <img src="https://i.ibb.co/gbrbT3HQ/55529904092-730743aa04-o.jpg" alt="Mansilla por la banda" loading="lazy" decoding="async">
         </div>
@@ -894,7 +1248,7 @@
         </div>
       </div>
 
-      <div class="photo-card">
+      <div class="photo-card" data-date="azopardo">
         <div class="photo-frame">
           <img src="https://i.ibb.co/Kxm453SK/55530926936-ed838b49df-o.jpg" alt="Presión en la cancha" loading="lazy" decoding="async">
         </div>
@@ -903,7 +1257,7 @@
         </div>
       </div>
 
-      <div class="photo-card">
+      <div class="photo-card" data-date="azopardo">
         <div class="photo-frame">
           <img src="https://i.ibb.co/DP84qWpY/55530926876-bb5f10092f-o.jpg" alt="Manejo en el mediocampo" loading="lazy" decoding="async">
         </div>
@@ -914,6 +1268,29 @@
     </div>
   </div>
 </section>
+
+<!-- MODAL FLOTANTE DE FICHA DE JUGADOR -->
+<div class="modal-overlay" id="playerModal" onclick="cerrarFicha(event)">
+  <div class="player-modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="cerrarFichaDirecto()">✕</button>
+    <div class="modal-shirt" id="mShirt">10</div>
+    <div class="modal-player-name" id="mName">Jugador</div>
+    <div class="modal-player-pos" id="mPos">Posición</div>
+    
+    <div class="modal-stats-row">
+      <div>
+        <div class="m-stat-val" id="mRol">Titular</div>
+        <div class="m-stat-lbl">Rol Táctico</div>
+      </div>
+      <div>
+        <div class="m-stat-val" id="mStat">0</div>
+        <div class="m-stat-lbl">Aporte Clave</div>
+      </div>
+    </div>
+    
+    <p style="font-size:0.9rem; color:#444;" id="mDesc">Descripción del jugador.</p>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
@@ -981,6 +1358,74 @@
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
+
+  // FILTRO DE FOTOS POR FECHA
+  function filtrarFotos(fecha, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('.photo-card');
+    cards.forEach(card => {
+      if (fecha === 'todas' || card.dataset.date === fecha) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // MODAL DE FICHAS DE JUGADORES
+  function abrirFicha(nombre, dorsal, posicion, rol, stat, desc) {
+    document.getElementById('mShirt').innerText = dorsal;
+    if (dorsal === '1') {
+      document.getElementById('mShirt').classList.add('gk');
+    } else {
+      document.getElementById('mShirt').classList.remove('gk');
+    }
+    document.getElementById('mName').innerText = nombre;
+    document.getElementById('mPos').innerText = posicion;
+    document.getElementById('mRol').innerText = rol;
+    document.getElementById('mStat').innerText = stat;
+    document.getElementById('mDesc').innerText = desc;
+    document.getElementById('playerModal').classList.add('active');
+  }
+
+  function cerrarFicha(event) {
+    if (event.target.id === 'playerModal') {
+      document.getElementById('playerModal').classList.remove('active');
+    }
+  }
+
+  function cerrarFichaDirecto() {
+    document.getElementById('playerModal').classList.remove('active');
+  }
+
+  // GENERADOR DE CARNET DE SOCIO DE LA BARRA
+  let socioIdCounter = 43;
+  function generarCarnet() {
+    const inputNombre = document.getElementById('socioNombre').value.trim();
+    const selectRol = document.getElementById('socioRol').value;
+
+    if (!inputNombre) {
+      alert('Por favor ingresá tu nombre o apodo para afiliarte.');
+      return;
+    }
+
+    document.getElementById('cardName').innerText = inputNombre;
+    document.getElementById('cardRole').innerText = selectRol;
+    document.getElementById('cardId').innerText = 'SOCIO #' + String(socioIdCounter).padStart(3, '0');
+    document.getElementById('avatarChar').innerText = inputNombre.charAt(0).toUpperCase();
+
+    // Agregar al padrón visual
+    const tag = document.createElement('span');
+    tag.className = 'member-tag';
+    tag.innerText = `${inputNombre} (#${socioIdCounter})`;
+    document.getElementById('membersList').appendChild(tag);
+
+    socioIdCounter++;
+    document.getElementById('socioNombre').value = '';
+    alert('¡Carnet oficial emitido con éxito! Hacé una captura para guardarlo.');
+  }
 </script>
 
 </body>
